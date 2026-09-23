@@ -1,0 +1,151 @@
+:root,
+.light {
+    color-scheme: light;
+    --background: #eef1f4;
+    --foreground: #24303d;
+    --card: #ffffff;
+    --card-foreground: #24303d;
+    --popover: #ffffff;
+    --popover-foreground: #24303d;
+    --primary: #477f56;
+    --primary-foreground: #ffffff;
+    --secondary: #e1e6eb;
+    --secondary-foreground: #2f3b48;
+    --muted: #e5e9ed;
+    --muted-foreground: #687583;
+    --accent: #cfe1d4;
+    --accent-foreground: #275d3c;
+    --destructive: #a44249;
+    --destructive-foreground: #ffffff;
+    --border: #cbd3da;
+    --input: #d8dee4;
+    --ring: #5b9470;
+    --sidebar: #f7f8fa;
+    --sidebar-foreground: #24303d;
+    --sidebar-primary: #477f56;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #e5e9ed;
+    --sidebar-accent-foreground: #24303d;
+    --sidebar-border: #cbd3da;
+    --sidebar-ring: #5b9470;
+    --money-positive: #287a48;
+    --money-neutral: #315f8c;
+    --money-negative: #a44249;
+    --money-warning: #806126;
+}
+
+.dark {
+    color-scheme: dark;
+    --background: #20262d;
+    --foreground: #f1f4f6;
+    --card: #29313a;
+    --card-foreground: #f1f4f6;
+    --popover: #29313a;
+    --popover-foreground: #f1f4f6;
+    --primary: #477f56;
+    --primary-foreground: #ffffff;
+    --secondary: #35404b;
+    --secondary-foreground: #f1f4f6;
+    --muted: #35404b;
+    --muted-foreground: #aeb8c2;
+    --accent: #344f3c;
+    --accent-foreground: #d9efdf;
+    --destructive: #b6525a;
+    --destructive-foreground: #ffffff;
+    --border: #465360;
+    --input: #3a4651;
+    --ring: #659b74;
+    --sidebar: #252c34;
+    --sidebar-foreground: #f1f4f6;
+    --sidebar-primary: #477f56;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #35404b;
+    --sidebar-accent-foreground: #f1f4f6;
+    --sidebar-border: #465360;
+    --sidebar-ring: #659b74;
+    --money-positive: #65c184;
+    --money-neutral: #73a7d5;
+    --money-negative: #df7b82;
+    --money-warning: #d1aa59;
+}
+
+.text-green-500 {
+    color: var(--money-positive) !important;
+}
+
+.text-blue-500 {
+    color: var(--money-neutral) !important;
+}
+
+.text-red-500 {
+    color: var(--money-negative) !important;
+}
+
+.dark .text-primary {
+    color: var(--money-positive) !important;
+}
+
+.theme-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--secondary);
+}
+
+.theme-switcher button {
+    border: 0;
+    border-radius: 0.375rem;
+    padding: 0.35rem 0.55rem;
+    background: transparent;
+    color: var(--muted-foreground);
+    font-size: 0.7rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.theme-switcher button[aria-pressed="true"] {
+    background: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.table-sticky tbody tr:nth-child(even) {
+    background-color: color-mix(in srgb, var(--muted) 42%, transparent);
+}
+
+.table-sticky tbody tr:hover {
+    background-color: color-mix(in srgb, var(--primary) 12%, var(--card));
+}
+
+/* Адрес в списках/отчётах: не раздувать таблицу длинной строкой */
+.table-sticky th.table-col-address,
+.table-sticky td.table-col-address {
+    width: 12rem;
+    max-width: 12rem;
+    min-width: 8rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.table-sticky td.table-col-address .table-col-address__text {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (min-width: 1024px) and (max-width: 1535px) {
+    nav [data-dropdown-toggle] {
+        padding-inline: 0.45rem;
+        font-size: 0.75rem;
+    }
+
+    nav .theme-switcher button {
+        padding-inline: 0.4rem;
+        font-size: 0.65rem;
+    }
+}
